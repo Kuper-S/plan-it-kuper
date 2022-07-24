@@ -40,7 +40,7 @@ const CreateplanPopup = ({modal, toggle, save}) => {
                         <label>Description</label>
                         <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"></textarea>
                     </div>
-                
+                    
             </ModalBody>
             <ModalFooter>
             <Button color="primary" onClick={handleSave}>Create</Button>{' '}

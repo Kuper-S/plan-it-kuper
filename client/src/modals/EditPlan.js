@@ -6,6 +6,8 @@ import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 const EditplanPopup = ({modal, toggle, updateplan, planObj}) => {
     const [planName, setplanName] = useState('');
     const [description, setDescription] = useState('');
+    const [type, setType] = useState('');
+    
     const [startDate, setStartDate] = useState(new Date());
     const handleChange = (e) => {
         
@@ -23,13 +25,15 @@ const EditplanPopup = ({modal, toggle, updateplan, planObj}) => {
     useEffect(() => {
         setplanName(planObj.Name)
         setDescription(planObj.Description)
-    },[planObj.Description, planObj.Name])
+        setType(planObj.Type)
+    },[planObj.Description, planObj.Name,planObj.Type])
 
     const handleUpdate = (e) => {
         e.preventDefault();
         let tempObj = {}
         tempObj['Name'] = planName
         tempObj['Description'] = description
+        tempObj['Type'] = type
         updateplan(tempObj)
     }
 
@@ -57,9 +61,19 @@ const EditplanPopup = ({modal, toggle, updateplan, planObj}) => {
                         </span>
                     </div>
                 </div>
+
+
                 <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                 
-                    
+                <div className = "form-group">
+                        <label>Type</label>
+                        <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"></textarea>
+                    </div>
+                    <div className = "form-group">
+                        <label>Participants</label>
+                        <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"></textarea>
+                    </div>
+                
                 
             </ModalBody>
             <ModalFooter>
