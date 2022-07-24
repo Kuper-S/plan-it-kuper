@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:8083/plan";
+const url = process.env.REACT_APP_SERVER_URL; 
 
 export const fetchPlans = async () =>{ 
     let data
