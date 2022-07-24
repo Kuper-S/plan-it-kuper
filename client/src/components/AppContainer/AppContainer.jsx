@@ -18,7 +18,7 @@ function AppContainer() {
     
     <div className="App">
       <CardList/>
-      {/* <InputPlans/> */}
+      <InputPlans/>
       <PlansList plans={plans}/>
       <Footer/>
     </div>

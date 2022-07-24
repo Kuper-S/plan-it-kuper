@@ -6,7 +6,7 @@ const InputPlans = ({props}) =>{
     const [inputValue,setInputValue] =  useState("");
 
     const handleInputValue = (event) =>{
-        setInputValue(event.targer.value)
+        setInputValue(event.target.value)
     }
     const handleButtonClick = async() =>{
         try {
@@ -29,7 +29,11 @@ const InputPlans = ({props}) =>{
                     value={inputValue}
                     placeholder ="Enter New Event"
                 />
-                <Button className="button button-87"  type="button" onClick = {handleButtonClick}>ADD EVENT</Button>
+                <Button 
+                    className="button button-87"  
+                    type="button" onClick={handleButtonClick}>
+                        ADD EVENT
+                </Button>
             </div>
         </div>
     )
