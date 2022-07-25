@@ -7,7 +7,7 @@ async function plansList(req, res){
 
 async function planAdding(req, res){
 
-    const {plan} = req.body; //postman
+    const {plan} = req.body; 
 
     if(!plan){
         return res.status(400).json({error: "Invalid plan, todo is null"});
@@ -18,7 +18,6 @@ async function planAdding(req, res){
         return res.status(200).json(plans);
     }catch(err){
         return res.status(500).json({error: err.toString()})
-        //return res.status(error.statusCode || 500).json({error: err.toString()})
     }
 }
 
@@ -30,20 +29,18 @@ async function planDeleting(req, res) {
         return res.status(200).json(plans);
     }catch(err){
         return res.status(500).json({error: err.toString()})
-        //return res.status(error.statusCode || 500).json({error: err.toString()})
     }
 }
 
 async function planEditing(req, res) {
     const id = req.params.id
-    const {plan} = req.body; //postman
-
+    const {plan} = req.body;
+    console.log("controller plan",plan)
     try{
         const plans = await planService.editPlan(id, plan)
         return res.status(200).json(plans);
     }catch(err){
         return res.status(500).json({error: err.toString()})
-        //return res.status(error.statusCode || 500).json({error: err.toString()})
     }
 }
 

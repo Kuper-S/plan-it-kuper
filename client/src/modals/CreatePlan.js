@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import {postPlan} from '../api/plan'
 
 const CreateplanPopup = ({modal, toggle, save}) => {
     const [planName, setplanName] = useState('');
@@ -21,6 +22,15 @@ const CreateplanPopup = ({modal, toggle, save}) => {
         planObj["Name"] = planName
         planObj["Description"] = description
         save(planObj)
+        //hard coded plan
+        postPlan({
+            eventId: 'blabla', 
+            type: 'bbq', 
+            eventName: 'bbq with friends', 
+            startDate: '01/01/2023', 
+            startHour: '23:00', 
+            description
+        })
     }
 
     return (

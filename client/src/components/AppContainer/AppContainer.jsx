@@ -19,7 +19,7 @@ function AppContainer() {
     <div className="App">
       <CardList/>
       <InputPlans/>
-      <PlansList plans={plans}/>
+      {plans && <PlansList plans={plans}/>}
       <Footer/>
     </div>
   )

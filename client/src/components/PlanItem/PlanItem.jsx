@@ -1,49 +1,54 @@
 import React, { useState } from 'react'
-import PlansList from '../PlansList/PlansList';
 import "./PlanItem.css"
+import {deletePlan, editPlan} from '../../api/plan'
 
 function PlanItem({plan}) {
   const [planEvent,setplanEvent] = useState(plan);
-    const handleInputOnChange = (event) =>{
-      setplanEvent(event.target.value);
-    }
-    
-    // const enterPalnInput =  (plan) => {
-    //   const array = [];
-    //    array.map(plan => array.push(<p>{plan}</p>));
-    //    return array
-    // } 
+  const handleInputOnChange = (event) =>{
+    setplanEvent(event.target.value);
+  }
+  
+  // const enterPalnInput =  (plan) => {
+  //   const array = [];
+  //    array.map(plan => array.push(<p>{plan}</p>));
+  //    return array
+  // } 
 
-    function deletePlan(id){
-      
-    }
+  function handleDeletePlan(id){
+    deletePlan(id)
+  }
+
+  function handleEditPlan(id, plan){
+    const cpyPlan = {...plan, description: 'nanabanana'} //hard coded edit
+    editPlan(id, cpyPlan)
+  }
     
   return (
-    <ul className=''>
-    <div className='input-div'>
-    <input 
+    <li id={plan.id} className="item">
+      <div className='input-div'>
+        <input 
             className="inputText"
             type="text"
             readOnly={true}
-            value = {plan.title}
-            onChange={handleInputOnChange}
+            value = {plan.eventName}
+            onChange={handleInputOnChange}/>
+        <h1>{plan.type}</h1>
+        <h2>{plan.startDate}</h2>
+        <h3>{plan.startHour}</h3>
+        <p>{plan.description}</p>
             
-          />
-
-
-        <h1>{plan.title}</h1>
-        <h2>{plan.place}</h2>
-        <h3>{plan.date}</h3>
-        
-        {plan.partifications.map(partification => <p key={partification}>{partification}</p>)}
-
         <button
             className="deleteButton"
-            onClick={deletePlan}
+            onClick={() => handleDeletePlan(plan.id)}
             fontSize="inherit"
           >🗑️</button>
-        </div>
-    </ul>
+        <button
+            className="editButton"
+            onClick={() => handleEditPlan(plan.id, plan)}
+            fontSize="inherit"
+          >🖋</button>
+      </div>
+    </li>
   )
 }
 
