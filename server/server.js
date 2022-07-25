@@ -27,9 +27,8 @@ app.listen(process.env.PORT ||  port, () => {
 
 setInterval(async function () {
   try {
-    const result = await db.sequelize.query("SELECT 1;")
-    console.log(result);
+    await db.sequelize.query("SELECT 1;")
   } catch (e) {
     console.log(e);
   }
-}, 5000);
+}, 10000);
