@@ -5,9 +5,8 @@ function PlansList({plans}) {
 
     return (
         <div className="">
-        <ul>{renderItem}</ul>
+            <ul>{renderItem}</ul>
         </div>
-        
     )
 }
 

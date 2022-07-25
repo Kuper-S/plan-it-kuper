@@ -7,8 +7,8 @@ async function getAllPlans() {
 }
 
 async function addPlan(plan){
-    const {eventId, type, eventName, startDate, startHour, description} = plan
-    await Event.create({eventId, type, eventName, startDate, startHour, description})
+    const {headline, date, type, location} = plan
+    await Event.create({headline, date, type, location})
     return plan
 }
 
