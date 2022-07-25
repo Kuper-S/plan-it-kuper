@@ -35,7 +35,7 @@ async function planDeleting(req, res) {
 async function planEditing(req, res) {
     const id = req.params.id
     const {plan} = req.body;
-    console.log("controller plan",plan)
+
     try{
         const plans = await planService.editPlan(id, plan)
         return res.status(200).json(plans);
