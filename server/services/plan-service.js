@@ -20,9 +20,7 @@ async function deletePlan(id){
 
 async function editPlan(id, plan){
     const editedPlan = await Event.findOne({where:{id}})
-    editedPlan.dataValues = plan
-    console.log("service editedPlan", editedPlan)
-    await editedPlan.save()
+    await editedPlan.update({...plan})
     return editedPlan
 }
 

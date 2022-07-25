@@ -40,6 +40,6 @@ export const editPlan = async(id, plan) => {
             plan
         }
     })
-    //console.log(editeddItem)
+
     return editeddItem
 }
