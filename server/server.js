@@ -4,7 +4,7 @@ const logger = require('./middlewares/logger.js');
 const path = require('path');
 const bodyParser = require("body-parser");
 const planRouter = require("./routes/plan-router.js");
-
+const db = require("./db/models")
 const port = 8083;
 const app = express();
 
@@ -23,3 +23,13 @@ app.get('/', (req, res) => {
 app.listen(process.env.PORT ||  port, () => {
   console.log(`Server is Running on Port: http://localhost:${process.env.PORT ||port  }`);
 });
+
+
+setInterval(async function () {
+  try {
+    const result = await db.sequelize.query("SELECT 1;")
+    console.log(result);
+  } catch (e) {
+    console.log(e);
+  }
+}, 5000);
