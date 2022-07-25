@@ -36,7 +36,7 @@ const CreateplanPopup = ({modal, toggle, save}) => {
             <ModalHeader toggle={toggle}>Create plan</ModalHeader>
             <ModalBody>
                     <div className = "form-group">
-                        <label>plan Name</label>
+                        <label>Plan Name</label>
                         <input 
                             type="text" 
                             className="form-control" 
@@ -59,7 +59,9 @@ const CreateplanPopup = ({modal, toggle, save}) => {
             <Button color="primary" onClick={handleSave}>Create</Button>{' '}
             <Button color="secondary" onClick={toggle}>Cancel</Button>
             </ModalFooter>
+            
       </Modal>
+      
     );
 };
 
