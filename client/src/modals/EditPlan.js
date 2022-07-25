@@ -36,22 +36,26 @@ const EditplanPopup = ({modal, toggle, updateplan, planObj}) => {
         <Modal isOpen={modal} toggle={toggle}>
             <ModalHeader toggle={toggle}>Update plan</ModalHeader>
             <ModalBody>
-            
-                    <div className = "form-group">
+                    <div className="form-group">
                         <label>Plan Title</label>
-                        <input type="text" className = "form-control" value = {planName} onChange = {handleChange} name = "planName"/>
+                        <input 
+                            type="text" 
+                            className="form-control" 
+                            value={planName} 
+                            onChange={handleChange} 
+                            name="planName"/>
                     </div>
                     <div className = "form-group">
                         <label>Description</label>
                         <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"></textarea>
                     </div>
 
-                    <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control"/>
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
+                    <div className="col-sm-4">
+                    <div className="input-group date" id="datepicker">
+                        <input type="text" className="form-control"/>
+                        <span className="input-group-append">
+                            <span className="input-group-text bg-white">
+                                <i className="fa fa-calendar"></i>
                             </span>
                         </span>
                     </div>

@@ -18,8 +18,8 @@ function AppContainer() {
     
     <div className="App">
       <CardList/>
-      {/* <InputPlans/> */}
-      <PlansList plans={plans}/>
+      <InputPlans/>
+      {plans && <PlansList plans={plans}/>}
       <Footer/>
     </div>
   )

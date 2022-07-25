@@ -48,7 +48,7 @@ const CardList = () => {
 
     return (
         <>
-            <div className = "header text-center">
+            <div className="header text-center">
                 <h3>ENTER NEW EVENT</h3>
                 <button 
                     className="btn btn-primary mt-2" 
