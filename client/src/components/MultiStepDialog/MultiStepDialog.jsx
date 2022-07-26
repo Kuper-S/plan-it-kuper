@@ -1,10 +1,11 @@
-/* import EventNameDialog from "./EventNameDialog"; ///
-import DatesDialog from "./DatesDialog";
-import EventTypeDialog from "./EventTypeDialog"; */
+import EventNameDialog from "../EventNameDialog/EventNameDialog";
+//import DatesDialog from "./DatesDialog";
+//import EventTypeDialog from "./EventTypeDialog";
 import LocationDialog from "../Dialogs/LocationDialog";
+
 import { useState } from "react";
 
-const MultiStepDialog = () => {
+const MultiStepDialog = ({}) => {
 //   const [input, setInput] = useState("");
   const [step, setStep] = useState(1);
   const [eventObj, setEventObj] = useState({
@@ -37,6 +38,7 @@ const MultiStepDialog = () => {
         <EventNameDialog
           nextStep={nextStep}
           eventState={eventObj}
+          setEventObj={setEventObj}
         />
       );
     case 2:
@@ -45,6 +47,7 @@ const MultiStepDialog = () => {
           nextStep={nextStep}
           prevStep={prevStep}
           eventState={eventObj}
+          setEventObj={setEventObj}
         />
       );
     case 3:
@@ -53,6 +56,7 @@ const MultiStepDialog = () => {
           nextStep={nextStep}
           prevStep={prevStep}
           eventState={eventObj}
+          setEventObj={setEventObj}
         />
       ); */
     case 1:

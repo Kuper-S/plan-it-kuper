@@ -7,22 +7,20 @@ import Footer from '../Footer/Footer'
 import DialogOne from '../Wizard/Wizard'
 import MultiStepDialog from '../MultiStepDialog/MultiStepDialog'
 
+const  AppContainer = ({}) => {
+  const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
+  // const [plans, setPlans] = useState([])
+  // const [dailogCounter, setDailogCounter] = useState(false);
 
-
-function AppContainer() {
-  const [plans, setPlans] = useState([])
-  const [dailogCounter, setDailogCounter] = useState(false);
-  
-
-  useEffect(() => {
-    fetchPlans().then(fetchedPlans => {
-      setPlans(fetchedPlans)
-    })
-  },[])
+  // useEffect(() => {
+  //   fetchPlans().then((fetchedPlans) => {
+  //     setPlans(fetchedPlans);
+  //   });
+  // }, []);
 
   return (
-    
     <div className="App">
+
       <MultiStepDialog />
       {/* <div className="header text-center">
       <h3>ENTER NEW EVENT</h3>
@@ -36,10 +34,19 @@ function AppContainer() {
    
       {/* <InputPlans/> */}
       {/* {plans && <PlansList plans={plans}/>} */}
-      <Footer/>
+      <div className="header text-center">
+        <h3>ENTER NEW EVENT</h3>
+        <button
+          className="btn btn-primary mt-2"
+          onClick={() => setIsCreateEventClicked(true)}
+        >
+          Create plan
+          {isCreateEventClicked && <MultiStepDialog />}
+        </button>
+      </div>
+      <Footer />
     </div>
-    
-  )
+  );
 }
 
-export default AppContainer
+export default AppContainer;
