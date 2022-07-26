@@ -1,4 +1,4 @@
-import EventNameDialog from "./EventNameDialog";
+import EventNameDialog from "./EventNameDialog"; ///
 import DatesDialog from "./DatesDialog";
 import EventTypeDialog from "./EventTypeDialog";
 import LocationDialog from "./LocationDialog";
