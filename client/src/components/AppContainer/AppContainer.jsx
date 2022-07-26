@@ -23,15 +23,15 @@ function AppContainer() {
     
     <div className="App">
     
-    <div className="header text-center">
-                <h3>ENTER NEW EVENT</h3>
-                <button 
-                    className="btn btn-primary mt-2" 
-                    onClick = {() => setDailogCounter(true)} >
-                        Create plan
-                </button>
-                {dailogCounter && <DialogOne/>}
-            </div>
+      <div className="header text-center">
+      <h3>ENTER NEW EVENT</h3>
+        <button 
+            className="btn btn-primary mt-2" 
+            onClick = {() => setDailogCounter(true)} >
+                Create plan
+        </button>
+        {dailogCounter && <DialogOne/>}
+      </div>
    
       {/* <InputPlans/> */}
       {plans && <PlansList plans={plans}/>}
