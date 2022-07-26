@@ -8,11 +8,11 @@ const initialState = {
 
 const plansReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.ADD_PLAN:
+        /* case actionTypes.ADD_PLAN:
             return {
                 ...state,
                 plans: [...state.plans, ...action.payload]
-            };
+            }; */
         // case "CREATE_PLAN":
         //     return [...state, action.payload];
         // case "UPDATE_PLAN":

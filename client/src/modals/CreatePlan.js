@@ -24,12 +24,10 @@ const CreateplanPopup = ({modal, toggle, save}) => {
         save(planObj)
         //hard coded plan
         postPlan({
-            eventId: 'blabla', 
-            type: 'bbq', 
-            eventName: 'bbq with friends', 
-            startDate: '01/01/2023', 
-            startHour: '23:00', 
-            description
+            headline: 'My event',
+            date: '01/01/2023', 
+            type: 'bbq',  
+            location: 'Modiin'
         })
     }
 

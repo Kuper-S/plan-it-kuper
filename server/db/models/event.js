@@ -14,17 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Event.init({
-    eventId: DataTypes.STRING,
+    headline: DataTypes.STRING,
+    date: DataTypes.STRING,
     type: DataTypes.STRING,
-    eventName: DataTypes.STRING,
-    startDate: DataTypes.STRING,
-    startHour: DataTypes.STRING,
-    description: DataTypes.STRING
+    location: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Event',
-    tableName:'Events',
-    timestamps: false
   });
   return Event;
 };

@@ -19,7 +19,7 @@ function PlanItem({plan}) {
   }
 
   function handleEditPlan(id, plan){
-    const cpyPlan = {...plan, description: 'nanabanana'} //hard coded edit
+    const cpyPlan = {...plan, date: '02/02/24'} //hard coded edit
     editPlan(id, cpyPlan)
   }
     
@@ -32,10 +32,10 @@ function PlanItem({plan}) {
             readOnly={true}
             value = {plan.eventName}
             onChange={handleInputOnChange}/>
-        <h1>{plan.type}</h1>
-        <h2>{plan.startDate}</h2>
-        <h3>{plan.startHour}</h3>
-        <p>{plan.description}</p>
+        <h1>{plan.headline}</h1>
+        <h2>{plan.date}</h2>
+        <h3>{plan.type}</h3>
+        <p>{plan.location}</p>
             
         <button
             className="deleteButton"
