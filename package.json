@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd server/db && npx sequelize-cli db:migrate && cd ../../ && node server/server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server/server.js"
   },
   "author": "",
   "license": "ISC",
