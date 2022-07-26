@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 //import DialogOne from "../Wizard/Wizard";
 import Footer from "../Footer/Footer";
 
-import MultiStepDialog from "../MultiStepDialog/MultiStepDialog";
+//import MultiStepDialog from "../MultiStepDialog/MultiStepDialog";
 
 const  AppContainer = ({}) => {
   const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
@@ -28,7 +28,7 @@ const  AppContainer = ({}) => {
           onClick={() => setIsCreateEventClicked(true)}
         >
           Create plan
-          {isCreateEventClicked && <MultiStepDialog />}
+          {/* {isCreateEventClicked && <MultiStepDialog />} */}
         </button>
       </div>
       <Footer />
