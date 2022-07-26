@@ -1,7 +1,7 @@
-import EventNameDialog from "./EventNameDialog"; ///
+/* import EventNameDialog from "./EventNameDialog"; ///
 import DatesDialog from "./DatesDialog";
-import EventTypeDialog from "./EventTypeDialog";
-import LocationDialog from "./LocationDialog";
+import EventTypeDialog from "./EventTypeDialog"; */
+import LocationDialog from "../Dialogs/LocationDialog";
 import { useState } from "react";
 
 const MultiStepDialog = () => {
@@ -29,8 +29,10 @@ const MultiStepDialog = () => {
 //     setInput(e.target.value);
 //   };
 
+  console.log(eventObj)
+
   switch (step) {
-    case 1:
+    /* case 1:
       return (
         <EventNameDialog
           nextStep={nextStep}
@@ -52,13 +54,13 @@ const MultiStepDialog = () => {
           prevStep={prevStep}
           eventState={eventObj}
         />
-      );
-    case 4:
+      ); */
+    case 1:
       return (
         <LocationDialog
           nextStep={nextStep}
           prevStep={prevStep}
-          eventState={eventObj}
+          setEventObj={setEventObj}
         />
       );
     default:

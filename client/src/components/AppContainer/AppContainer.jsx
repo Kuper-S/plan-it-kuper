@@ -5,6 +5,7 @@ import PlansList from '../PlansList/PlansList'
 import CardList from '../Card/CardList'
 import Footer from '../Footer/Footer'
 import DialogOne from '../Wizard/Wizard'
+import MultiStepDialog from '../MultiStepDialog/MultiStepDialog'
 
 
 
@@ -22,8 +23,8 @@ function AppContainer() {
   return (
     
     <div className="App">
-    
-      <div className="header text-center">
+      <MultiStepDialog />
+      {/* <div className="header text-center">
       <h3>ENTER NEW EVENT</h3>
         <button 
             className="btn btn-primary mt-2" 
@@ -31,10 +32,10 @@ function AppContainer() {
                 Create plan
         </button>
         {dailogCounter && <DialogOne/>}
-      </div>
+      </div> */}
    
       {/* <InputPlans/> */}
-      {plans && <PlansList plans={plans}/>}
+      {/* {plans && <PlansList plans={plans}/>} */}
       <Footer/>
     </div>
     
