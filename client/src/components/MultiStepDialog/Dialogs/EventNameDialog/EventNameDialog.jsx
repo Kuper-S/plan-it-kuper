@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import Dialog from '@material-ui/core/Dialog'
 import AppBar from '@material-ui/core/AppBar'
-import MultiStepDialog from '../MultiStepDialog/MultiStepDialog'
+import Button from '@material-ui/core/Button'
+import MultiStepDialog from '../../MultiStepDialog'
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Grid from "@material-ui/core/Grid";
+import CloseIcon from "@material-ui/icons/Close";
 
-function EventNameDialog() {
+function EventNameDialog({nextStep, setEventObj, closeDialog}) {
     const [input,setInput] = useState('')
 
     const handleChange = (e) => {
@@ -12,8 +18,13 @@ function EventNameDialog() {
 
     const handleNextButton = (e) => {
         e.preventDefault()
-        MultiStepDialog.nextStep()
-        setInput('')
+
+        if(input === '') {
+          alert('Event can not be empty')
+          return
+        }
+        setEventObj(prevState => ({...prevState, eventName: input}))
+        nextStep()
     }
 
   return (
@@ -22,7 +33,14 @@ function EventNameDialog() {
           fullWidth
           maxWidth='sm'
         >
-          <AppBar title="Enter Event Title" />
+          <DialogTitle>
+            <Grid container justify="space-between" alignItems="center">
+              <Typography variant="div">Event name</Typography>
+              <IconButton onClick={closeDialog}>
+                <CloseIcon />
+              </IconButton>
+            </Grid>
+          </DialogTitle>
           <input
             className='createDialog-eventName'
             placeholder="Enter Your Event Name"

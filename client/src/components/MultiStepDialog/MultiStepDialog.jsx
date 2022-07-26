@@ -1,12 +1,12 @@
-import EventNameDialog from "../EventNameDialog/EventNameDialog";
+import EventNameDialog from "./Dialogs/EventNameDialog/EventNameDialog";
 //import DatesDialog from "./DatesDialog";
 //import EventTypeDialog from "./EventTypeDialog";
-import LocationDialog from "../Dialogs/LocationDialog";
+import LocationDialog from "./Dialogs/LocationDialog";
 
 import { useState } from "react";
 
-const MultiStepDialog = ({}) => {
-//   const [input, setInput] = useState("");
+const MultiStepDialog = ({setIsCreateEventClicked}) => {
+  
   const [step, setStep] = useState(1);
   const [eventObj, setEventObj] = useState({
     eventName: "",
@@ -25,23 +25,28 @@ const MultiStepDialog = ({}) => {
     setStep(step - 1);
   };
 
-  // Handle fields change
-//   const handleChange = (e) => {
-//     setInput(e.target.value);
-//   };
+  const closeDialog = () => {
+    setIsCreateEventClicked(false);
+    setEventObj({
+      eventName: "",
+      dates: "",
+      eventType: "",
+      location: "",
+    })
+  }
 
   console.log(eventObj)
 
   switch (step) {
-    /* case 1:
+    case 1:
       return (
         <EventNameDialog
           nextStep={nextStep}
-          eventState={eventObj}
           setEventObj={setEventObj}
+          closeDialog={closeDialog}
         />
       );
-    case 2:
+     /*case 2:
       return (
         <DatesDialog
           nextStep={nextStep}
@@ -58,15 +63,15 @@ const MultiStepDialog = ({}) => {
           eventState={eventObj}
           setEventObj={setEventObj}
         />
-      ); */
-    case 1:
+      ); 
+    case 4:
       return (
         <LocationDialog
           nextStep={nextStep}
           prevStep={prevStep}
           setEventObj={setEventObj}
         />
-      );
+      );*/
     default:
       console.log("This is a multi-step form built with React.");
   }

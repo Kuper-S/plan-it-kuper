@@ -1,13 +1,8 @@
-import {useState, useEffect} from 'react'
-import {fetchPlans} from '../../api/plan'
-import InputPlans from '../InputPlans/InputPlans'
-import PlansList from '../PlansList/PlansList'
-import CardList from '../Card/CardList'
+import {useState} from 'react'
 import Footer from '../Footer/Footer'
-import DialogOne from '../Wizard/Wizard'
 import MultiStepDialog from '../MultiStepDialog/MultiStepDialog'
 
-const  AppContainer = ({}) => {
+const  AppContainer = () => {
   const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
   // const [plans, setPlans] = useState([])
   // const [dailogCounter, setDailogCounter] = useState(false);
@@ -20,8 +15,6 @@ const  AppContainer = ({}) => {
 
   return (
     <div className="App">
-
-      <MultiStepDialog />
       {/* <div className="header text-center">
       <h3>ENTER NEW EVENT</h3>
         <button 
@@ -34,6 +27,7 @@ const  AppContainer = ({}) => {
    
       {/* <InputPlans/> */}
       {/* {plans && <PlansList plans={plans}/>} */}
+      {isCreateEventClicked && <MultiStepDialog setIsCreateEventClicked={setIsCreateEventClicked}/>}
       <div className="header text-center">
         <h3>ENTER NEW EVENT</h3>
         <button
@@ -41,7 +35,6 @@ const  AppContainer = ({}) => {
           onClick={() => setIsCreateEventClicked(true)}
         >
           Create plan
-          {isCreateEventClicked && <MultiStepDialog />}
         </button>
       </div>
       <Footer />
