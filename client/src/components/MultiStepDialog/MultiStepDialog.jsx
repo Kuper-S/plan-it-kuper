@@ -1,7 +1,7 @@
-import EventNameDialog from "./EventNameDialog";
-import DatesDialog from "./DatesDialog";
-import EventTypeDialog from "./EventTypeDialog";
-import LocationDialog from "./LocationDialog";
+// import EventNameDialog from "./EventNameDialog";
+// import DatesDialog from "./DatesDialog";
+// import EventTypeDialog from "./EventTypeDialog";
+// import LocationDialog from "./LocationDialog";
 import { useState } from "react";
 
 const MultiStepDialog = () => {
@@ -29,41 +29,41 @@ const MultiStepDialog = () => {
 //     setInput(e.target.value);
 //   };
 
-  switch (step) {
-    case 1:
-      return (
-        <EventNameDialog
-          nextStep={nextStep}
-          eventState={eventObj}
-        />
-      );
-    case 2:
-      return (
-        <DatesDialog
-          nextStep={nextStep}
-          prevStep={prevStep}
-          eventState={eventObj}
-        />
-      );
-    case 3:
-      return (
-        <EventTypeDialog
-          nextStep={nextStep}
-          prevStep={prevStep}
-          eventState={eventObj}
-        />
-      );
-    case 4:
-      return (
-        <LocationDialog
-          nextStep={nextStep}
-          prevStep={prevStep}
-          eventState={eventObj}
-        />
-      );
-    default:
-      console.log("This is a multi-step form built with React.");
-  }
+  // switch (step) {
+  //   case 1:
+  //     return (
+  //       <EventNameDialog
+  //         nextStep={nextStep}
+  //         eventState={eventObj}
+  //       />
+  //     );
+  //   case 2:
+  //     return (
+  //       <DatesDialog
+  //         nextStep={nextStep}
+  //         prevStep={prevStep}
+  //         eventState={eventObj}
+  //       />
+  //     );
+  //   case 3:
+  //     return (
+  //       <EventTypeDialog
+  //         nextStep={nextStep}
+  //         prevStep={prevStep}
+  //         eventState={eventObj}
+  //       />
+  //     );
+  //   case 4:
+  //     return (
+  //       <LocationDialog
+  //         nextStep={nextStep}
+  //         prevStep={prevStep}
+  //         eventState={eventObj}
+  //       />
+  //     );
+  //   default:
+  //     console.log("This is a multi-step form built with React.");
+  // }
 };
 
 export default MultiStepDialog;
