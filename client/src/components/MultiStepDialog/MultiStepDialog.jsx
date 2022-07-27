@@ -1,5 +1,5 @@
 import EventNameDialog from "./Dialogs/EventNameDialog/EventNameDialog";
-//import DatesDialog from "./DatesDialog";
+import DatesDialog from "./Dialogs/DatesDialog/DatesDialog";
 //import EventTypeDialog from "./EventTypeDialog";
 import LocationDialog from "./Dialogs/LocationDialog";
 
@@ -46,16 +46,17 @@ const MultiStepDialog = ({setIsCreateEventClicked}) => {
           closeDialog={closeDialog}
         />
       );
-     /*case 2:
+     case 2:
       return (
         <DatesDialog
           nextStep={nextStep}
           prevStep={prevStep}
-          eventState={eventObj}
           setEventObj={setEventObj}
+          closeDialog={closeDialog}
+          setIsCreateEventClicked={setIsCreateEventClicked}
         />
       );
-    case 3:
+    /*case 3:
       return (
         <EventTypeDialog
           nextStep={nextStep}

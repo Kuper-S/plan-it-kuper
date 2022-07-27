@@ -8,12 +8,12 @@ const libraries = ["places"]
 
 const LocationDialog = ({nextStep, prevStep, setEventObj}) => {
 
-    const continueStep = (e) => {
+    const handleNextButton = (e) => {
         e.preventDefault();
         nextStep();
     };
 
-    const backStep = (e) => {
+    const handlePrevButton = (e) => {
         e.preventDefault();
         prevStep();
     }  
@@ -31,13 +31,13 @@ const LocationDialog = ({nextStep, prevStep, setEventObj}) => {
             <Button
                 color="secondary"
                 variant="contained"
-                onClick={backStep}
+                onClick={handlePrevButton}
             >Back</Button>
 
             <Button
                 color="primary"
                 variant="contained"
-                onClick={continueStep}
+                onClick={handleNextButton}
             >Continue</Button>
         </MuiThemeProvider>
     </>
