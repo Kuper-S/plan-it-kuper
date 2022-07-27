@@ -1,6 +1,6 @@
 import EventNameDialog from "./Dialogs/EventNameDialog/EventNameDialog";
 import DatesDialog from "./Dialogs/DatesDialog/DatesDialog";
-//import EventTypeDialog from "./EventTypeDialog";
+import EventTypeDialog from "./Dialogs/EventTypeDialog/EventTypeDialog";
 import LocationDialog from "./Dialogs/LocationDialog";
 
 import { useState } from "react";
@@ -27,12 +27,13 @@ const MultiStepDialog = ({setIsCreateEventClicked}) => {
 
   const closeDialog = () => {
     setIsCreateEventClicked(false);
-    setEventObj({
-      eventName: "",
-      dates: "",
-      eventType: "",
-      location: "",
-    })
+  }
+
+  const style = {
+    display: 'flex', 
+    alignItems: 'center', 
+    justifyContent: 'space-between', 
+    padding:'5px'
   }
 
   console.log(eventObj)
@@ -53,19 +54,20 @@ const MultiStepDialog = ({setIsCreateEventClicked}) => {
           prevStep={prevStep}
           setEventObj={setEventObj}
           closeDialog={closeDialog}
-          setIsCreateEventClicked={setIsCreateEventClicked}
+          style={style}
         />
       );
-    /*case 3:
+    case 3:
       return (
         <EventTypeDialog
           nextStep={nextStep}
           prevStep={prevStep}
-          eventState={eventObj}
           setEventObj={setEventObj}
+          closeDialog={closeDialog}
+          style={style}
         />
       ); 
-    case 4:
+    /*case 4:
       return (
         <LocationDialog
           nextStep={nextStep}

@@ -12,7 +12,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import './DatesDialog.css'
 
-function DatePickerDialog({nextStep,prevStep, setEventObj, closeDialog}) {
+function DatePickerDialog({nextStep,prevStep, setEventObj, closeDialog, style}) {
     const [startDate, setStartDate] = useState(new Date());
 
     const handleNextButton = (e) => {
@@ -35,7 +35,7 @@ function DatePickerDialog({nextStep,prevStep, setEventObj, closeDialog}) {
       >
         <DialogTitle>
           <Grid container justify="space-between" alignItems="center">
-            <Typography variant="div">Event name</Typography>
+            <Typography variant="div">Pick a date</Typography>
             <IconButton onClick={closeDialog}>
               <CloseIcon />
             </IconButton>
@@ -51,19 +51,20 @@ function DatePickerDialog({nextStep,prevStep, setEventObj, closeDialog}) {
             }}
           />
         </LocalizationProvider>
-        
-        <Button
-          color="secondary"
-          variant="contained"
-          onClick={handlePrevButton}>
-            Back
-        </Button>
-        <Button
-          color="primary"
-          variant="contained"
-          onClick={handleNextButton}>
-            Next
+        <div style={style}>
+          <Button
+            color="secondary"
+            variant="contained"
+            onClick={handlePrevButton}>
+              Back
           </Button>
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={handleNextButton}>
+              Next
+          </Button>
+        </div>
       </Dialog>
       );
 }
