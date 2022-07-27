@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
-
+.App{
+    font-family: 'Poppins', sans-serif;
+    
+}
 
 .header-text-center {
     padding: 40px ;
+    
 }
 .createplan{
     width: 300px;
     margin-top: 20px;
     font-size:x-large;
     font-weight: 500;
+    
 }
 .title-event{
     margin-top: -40px;
@@ -45,7 +50,10 @@
     outline: none;
     transition: 0.25s ease-in-out;
   }
-  
+  .carousel{
+    box-sizing: content-box;
+    font-size: 3rem;
+  }
   svg {
     position: absolute;
     left: 0;
@@ -78,3 +86,7 @@
     font-size: 18px;
     font-weight: 100;
   } 
+
+.my-events{
+    font-size: 2rem;
+}

@@ -57,7 +57,7 @@ const EventTypeDialog = ({nextStep,prevStep, setEventObj, closeDialog, style}) =
           </Grid>
         </DialogTitle>
         <Box sx={{ display: "flex" }}>
-          <FormControl sx={{ m:2,mb: 10,ml:4 ,pl:5}} component="fieldset" variant="standard">
+          <FormControl sx={{ m:2,mb: 4,ml:4 ,pl:5}} component="fieldset" variant="standard">
             <FormLabel style={{ fontSize: '2rem' ,color:"blueviolet" }} component="legend">Event Types</FormLabel>
             <RadioGroup
               value={type}

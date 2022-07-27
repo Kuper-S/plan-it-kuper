@@ -47,7 +47,7 @@ function DatePickerDialog({nextStep,prevStep, setEventObj, closeDialog, style}) 
         </DialogTitle>
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DateTimePicker
-            renderInput={(props) => <TextField {...props}  sx={{ mb:27 }} />}
+            renderInput={(props) => <TextField {...props}  sx={{ mb:21 }} />}
             label="DateTimePicker"
             value={startDate}
             onChange={(newValue) => {

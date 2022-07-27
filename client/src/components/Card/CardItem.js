@@ -35,7 +35,7 @@ export default function CardList() {
   };
 
   return (
-    <Card sx={{ maxWidth: 345, bgcolor: red[500]}}>
+    <Card sx={{ maxWidth: 345, bgcolor: red[500],mt:10}}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: blue[500] }} aria-label="recipe">

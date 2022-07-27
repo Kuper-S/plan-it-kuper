@@ -56,7 +56,7 @@ function EventNameDialog({nextStep, setEventObj, closeDialog}) {
             </Grid>
           </DialogTitle>
           <TextField 
-            sx={{ m:2,mb: 22}}
+            sx={{ m:2,mb: 16}}
             id="outlined-basic" label="Event Name" variant="outlined" 
             placeholder="Enter Your Event Name"
             color="secondary"
