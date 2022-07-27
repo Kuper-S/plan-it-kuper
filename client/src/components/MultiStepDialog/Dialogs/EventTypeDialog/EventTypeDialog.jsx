@@ -40,21 +40,25 @@ const EventTypeDialog = ({nextStep,prevStep, setEventObj, closeDialog, style}) =
 
   return (
     <Dialog
+      PaperProps={{ style: {
+          minHeight: '70%',
+          maxHeight: '70%',
+        }}}
         open
         fullWidth
         maxWidth='sm'
       >
         <DialogTitle>
           <Grid container justify="space-between" alignItems="center">
-            <Typography variant="div">Pick a Event type</Typography>
+            <Typography variant="h3" >Choose Event type</Typography>
             <IconButton onClick={closeDialog}>
               <CloseIcon />
             </IconButton>
           </Grid>
         </DialogTitle>
         <Box sx={{ display: "flex" }}>
-          <FormControl sx={{ m: 3 }} component="fieldset" variant="standard">
-            <FormLabel component="legend">Event Types</FormLabel>
+          <FormControl sx={{ m:2,mb: 10,ml:4 ,pl:5}} component="fieldset" variant="standard">
+            <FormLabel style={{ fontSize: '2rem' ,color:"blueviolet" }} component="legend">Event Types</FormLabel>
             <RadioGroup
               value={type}
               onChange={handleChange}
@@ -66,20 +70,22 @@ const EventTypeDialog = ({nextStep,prevStep, setEventObj, closeDialog, style}) =
               />
               <FormControlLabel
                 value="bbq"
-                control={<Radio />}
+                control={<Radio color="error"/>}
                 label="BBQ with Friends"
               />
               <FormControlLabel
                 value="party"
-                control={<Radio />}
+                control={<Radio color="secondary"/>}
                 label="Party"
               />
               <FormControlLabel
                 value="camping"
-                control={<Radio />}
-                label="Camping"
+                control={<Radio color="success" fontSize ="3rem"/>}
+                label="Camping" 
+                
               />
               <FormControlLabel
+                
                 value="other"
                 control={<Radio />}
                 label="Other"
@@ -89,12 +95,14 @@ const EventTypeDialog = ({nextStep,prevStep, setEventObj, closeDialog, style}) =
         </Box>
         <div style={style}>
         <Button
+          style={{width:'80px',height:'60px'}}
           color="secondary"
           variant="contained"
           onClick={handlePrevButton}>
             Back
         </Button>
         <Button
+          style={{width:'80px',height:'60px'}}
           color="primary"
           variant="contained"
           onClick={handleNextButton}>

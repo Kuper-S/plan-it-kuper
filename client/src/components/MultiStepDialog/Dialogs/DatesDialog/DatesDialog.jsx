@@ -29,13 +29,17 @@ function DatePickerDialog({nextStep,prevStep, setEventObj, closeDialog, style}) 
 
     return (
       <Dialog
+       PaperProps={{ style: {
+          minHeight: '70%',
+          maxHeight: '70%',
+        }}}
         open
         fullWidth
         maxWidth='sm'
       >
         <DialogTitle>
           <Grid container justify="space-between" alignItems="center">
-            <Typography variant="div">Pick a date</Typography>
+            <Typography variant="h3">Pick a date</Typography>
             <IconButton onClick={closeDialog}>
               <CloseIcon />
             </IconButton>
@@ -43,7 +47,7 @@ function DatePickerDialog({nextStep,prevStep, setEventObj, closeDialog, style}) 
         </DialogTitle>
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DateTimePicker
-            renderInput={(props) => <TextField {...props} />}
+            renderInput={(props) => <TextField {...props}  sx={{ mb:27 }} />}
             label="DateTimePicker"
             value={startDate}
             onChange={(newValue) => {
@@ -52,13 +56,15 @@ function DatePickerDialog({nextStep,prevStep, setEventObj, closeDialog, style}) 
           />
         </LocalizationProvider>
         <div style={style}>
-          <Button
+          <Button 
+          style={{width:'80px',height:'60px'}}
             color="secondary"
             variant="contained"
             onClick={handlePrevButton}>
               Back
           </Button>
           <Button
+           style={{width:'80px',height:'60px'}}
             color="primary"
             variant="contained"
             onClick={handleNextButton}>

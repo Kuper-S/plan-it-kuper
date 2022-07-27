@@ -1,14 +1,23 @@
 import React, { useState } from 'react'
 import Dialog from '@material-ui/core/Dialog'
+import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button'
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Grid from "@material-ui/core/Grid";
+import  TextField  from '@mui/material/TextField';
 import CloseIcon from "@material-ui/icons/Close";
 
 function EventNameDialog({nextStep, setEventObj, closeDialog}) {
     const [input,setInput] = useState('')
+
+    const styles = {
+      dialogPaper: {
+          minHeight: '80vh',
+          maxHeight: '80vh',
+      },
+  };
 
     const handleChange = (e) => {
         setInput(e.target.value)
@@ -27,19 +36,40 @@ function EventNameDialog({nextStep, setEventObj, closeDialog}) {
 
   return (
         <Dialog
+          // style={{height:'500px'}}
+          PaperProps={{ style: {
+          minHeight: '70%',
+          maxHeight: '70%',
+          mb:40
+        }}}
           open
           fullWidth
+          minHeight = '80vh'
           maxWidth='sm'
         >
           <DialogTitle>
             <Grid container justify="space-between" alignItems="center">
-              <Typography variant="div">Event name</Typography>
+              <Typography variant="h2">Event name</Typography>
               <IconButton onClick={closeDialog}>
                 <CloseIcon />
               </IconButton>
             </Grid>
           </DialogTitle>
-          <input
+          <TextField 
+            sx={{ m:2,mb: 22}}
+            id="outlined-basic" label="Event Name" variant="outlined" 
+            placeholder="Enter Your Event Name"
+            color="secondary"
+            focused
+            value={input}
+            type = "text"
+            onChange={handleChange}
+            required
+
+          
+
+          />
+          {/* <input
             className='createDialog-eventName'
             placeholder="Enter Your Event Name"
             label="Event Name"
@@ -49,14 +79,22 @@ function EventNameDialog({nextStep, setEventObj, closeDialog}) {
             margin="normal"
             fullWidth
             required
-          />
+          /> */}
           
           <br />
+          
+          
           <Button
-            color="primary"
+            color="secondary"
+            style={{height:'60px' , }}
+            sx={{ mt: 10 }} 
             variant="contained"
             onClick={handleNextButton}
-          >Next</Button>
+          >Next
+          </Button>
+         
+          
+          
         </Dialog>
   )
 }

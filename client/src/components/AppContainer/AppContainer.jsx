@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import {useState} from 'react'
+import CardItem from '../Card/CardItem'
 import Footer from '../Footer/Footer'
 import MultiStepDialog from '../MultiStepDialog/MultiStepDialog'
-
+import "./AppContainer.css"
 const  AppContainer = () => {
   const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
   // const [plans, setPlans] = useState([])
@@ -15,28 +17,19 @@ const  AppContainer = () => {
 
   return (
     <div className="App">
-      {/* <div className="header text-center">
-      <h3>ENTER NEW EVENT</h3>
-        <button 
-            className="btn btn-primary mt-2" 
-            onClick = {() => setDailogCounter(true)} >
-                Create plan
-        </button>
-        {dailogCounter && <DialogOne/>}
-      </div> */}
-   
-      {/* <InputPlans/> */}
-      {/* {plans && <PlansList plans={plans}/>} */}
+    
       {isCreateEventClicked && <MultiStepDialog setIsCreateEventClicked={setIsCreateEventClicked}/>}
-      <div className="header text-center">
-        <h3>ENTER NEW EVENT</h3>
+      <div className="header-text-center ">
+        <h3 className='title-event'>ENTER NEW EVENT</h3>
         <button
-          className="btn btn-primary mt-2"
+          className ="btn btn-white btn-animate createplan"
           onClick={() => setIsCreateEventClicked(true)}
         >
-          Create plan
+          Create Plan
         </button>
+       
       </div>
+      <CardItem/>
       <Footer />
     </div>
   );
