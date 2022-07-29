@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer'
 import MultiStepDialog from '../MultiStepDialog/MultiStepDialog'
 import "./AppContainer.css"
 import PlanCarousel from '../Carousel/Carousel'
+import Dashboard from '../Dashboard/Dashboard'
 
 const  AppContainer = () => {
   const [isCreateEventClicked, setIsCreateEventClicked] = useState(false);
@@ -31,6 +32,7 @@ const  AppContainer = () => {
         </button>
        
       </div>
+      <Dashboard/>
       <div><span className='my-events'>My Events</span></div>
       <CardItem/>
       <Footer />
